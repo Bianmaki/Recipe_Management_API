@@ -26,18 +26,12 @@ It simulates a real-world recipe management system with a focus on backend devel
   - View recipes by category
   - View recipes by ingredient
   - Search recipes by title, category, ingredient, or preparation time (to be extended)
+  
 **FEATURES ADDED**
 -**Authentication**
 -Implemented Django Rest Framework's TokenAuthentication
-Users can Login to receive an authentication Token.
+Users can log in to receive an authentication Token.
 Use the token to authenticate requests.
--**Search & Filtering**
-One can now search the following areas:
-- Recipe using Title
-- Recipe using description
-- Recipe using instructions
-- Category using name
-- Ingredient using name
 
 - **Sorting**
 Recipes can be ordered by:
