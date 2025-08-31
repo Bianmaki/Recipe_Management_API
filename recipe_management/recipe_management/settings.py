@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 from dotenv import load_dotenv
 from urllib.parse import urlparse, parse_qsl
 
@@ -31,7 +32,7 @@ SECRET_KEY = 'django-insecure-dukto6i2uuw7@6+p3e!w=2lcxa_(&@z%hsdz5xajc4pp(jk004
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['social-media-api.onrender.com']
 
 
 # Application definition
@@ -110,8 +111,13 @@ DATABASES = {
         'HOST': tmpPostgres.hostname,
         'PORT': 5432,
         'OPTIONS': dict(parse_qsl(tmpPostgres.query)),
-    }
+    } 
 }
+
+# Override with DATABASE_URL from environment (Render will set this)
+DATABASES['default'] = dj_database_url.config(
+    default=f"postgres://{tmpPostgres.username}:{tmpPostgres.password}@{tmpPostgres.hostname}:5432/{tmpPostgres.path.replace('/', '')}"
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -147,6 +153,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = 'static/'
 
 # Default primary key field type
