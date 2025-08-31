@@ -26,3 +26,39 @@ It simulates a real-world recipe management system with a focus on backend devel
   - View recipes by category
   - View recipes by ingredient
   - Search recipes by title, category, ingredient, or preparation time (to be extended)
+
+  **The payloads I used**
+  *Users*
+   {
+  "username": "Lisathecook",
+  "email": "lisaagness02@gmail.com",
+  "password": "Metting123"
+}
+
+
+  {
+  "username": "Lisathecook",
+  "email": "lisaagness02@gmail.com",
+  "password": "Metting123"
+}
+*ingredients*
+
+{
+    "name": "flour",
+    "description": "wheat flour"
+}
+
+{
+    "name": "milk",
+    "description": "powdered milk"
+}
+
+{
+"title": "Bread",
+  "description": "White Bread.",
+  "instructions": "Mix ingredients, bake at 180°C for 30 minutes.",
+  "category": 1,
+  "prep_time": 20,
+  "cook_time": 30,
+  "servings": 8
+}
