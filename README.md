@@ -26,8 +26,7 @@ It simulates a real-world recipe management system with a focus on backend devel
   - View recipes by category
   - View recipes by ingredient
   - Search recipes by title, category, ingredient, or preparation time (to be extended)
-
-  **The payloads I used**
+**The payloads I used**
   *Users*
    {
   "username": "Lisathecook",
@@ -62,3 +61,24 @@ It simulates a real-world recipe management system with a focus on backend devel
   "cook_time": 30,
   "servings": 8
 }
+
+  
+**FEATURES ADDED**
+-**Authentication**
+-Implemented Django Rest Framework's TokenAuthentication
+Users can log in to receive an authentication Token.
+Use the token to authenticate requests.
+
+- **Sorting**
+Recipes can be ordered by:
+- created_at
+- prep_time
+- cook_time
+
+-**Pagination**
+Implemented pagination using **PageNumberPagination*
+Default page size is 10 recipes per page.
+
+
+
+
