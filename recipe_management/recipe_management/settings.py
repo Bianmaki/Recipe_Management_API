@@ -27,10 +27,9 @@ AUTH_USER_MODEL = 'recipes.User'
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dukto6i2uuw7@6+p3e!w=2lcxa_(&@z%hsdz5xajc4pp(jk004'
-
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", 'django-insecure-dukto6i2uuw7@6+p3e!w=2lcxa_(&@z%hsdz5xajc4pp(jk004')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ['social-media-api.onrender.com']
 
